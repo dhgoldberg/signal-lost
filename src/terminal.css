@@ -1,0 +1,83 @@
+:root {
+  --bg: #0b0f0e;
+  --fg: #cfe7da;
+  --muted: #7aa393;
+  --border: #1b2a23;
+  --prompt: #9fe6c2;
+}
+
+.page {
+  min-height: 100vh;
+  background: radial-gradient(1200px 600px at 30% 20%, #0f1714, var(--bg));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+.terminal {
+  width: min(980px, 100%);
+  height: min(720px, 100vh - 48px);
+  background: rgba(7, 10, 9, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.screen {
+  flex: 1;
+  padding: 18px 18px 8px 18px;
+  overflow: auto;
+}
+
+.line {
+  margin: 0;
+  color: var(--fg);
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.35;
+  font-size: 14px;
+}
+
+.promptRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 14px;
+  border-top: 1px solid var(--border);
+  background: rgba(5, 8, 7, 0.95);
+}
+
+.prompt {
+  color: var(--prompt);
+  user-select: none;
+  font-weight: 600;
+}
+
+.promptInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--fg);
+  font-size: 14px;
+  caret-color: var(--prompt);
+}
+
+.hint {
+  padding: 10px 14px 14px 14px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: rgba(5, 8, 7, 0.95);
+  font-size: 12px;
+}
+
+.hint code {
+  color: var(--fg);
+}
